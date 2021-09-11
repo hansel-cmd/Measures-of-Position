@@ -24,40 +24,40 @@
     <section>
         <div class="container">
             <div class="row">
-                <p class="fs-4">Z-score</p>
-                <p>General Formula: <span class="fw-bold">Z = (value - mean) / standard deviation</span></p>
-                <p>Population Formula: <span class="fw-bold">Z = (X - <span>&#x03BC;</span>) /
-                        <span>&sigma;</span></span></p>
-                <p>Sample Formula: <span class="fw-bold">Z = (X - <span>X&#772;</span>) / s</span></p>
-                <p>It represents the number of standard deviations that a data value falls above or below the mean for a
-                    specific distirbution of values</p>
-                <p class="pb-0 mb-0">If z-score = 0, the value is the same as mean</p>
-                <p class="pb-0 mb-0">If z-score < 0, the value is below the mean</p>
-                        <p>If z-score > 0, the value is below the mean</p>
+                <div class="col-4">
+                    <p class="fs-4">Z-score</p>
+                    <p>General Formula: <span class="fw-bold">Z = (value - mean) / standard deviation</span></p>
+                    <p>Population Formula: <span class="fw-bold">Z = (X - <span>&#x03BC;</span>) /
+                            <span>&sigma;</span></span></p>
+                    <p>Sample Formula: <span class="fw-bold">Z = (X - <span>X&#772;</span>) / s</span></p>
+                    <p>It represents the number of standard deviations that a data value falls above or below the mean
+                        for a
+                        specific distirbution of values</p>
+                    <p class="pb-0 mb-0">If z-score = 0, the value is the same as mean</p>
+                    <p class="pb-0 mb-0">If z-score &#60; 0, the value is below the mean</p>
+                    <p>If z-score > 0, the value is below the mean</p>
 
-                        <div class="row">
-                            <div class="col">
-                                <p class="fw-bold">Finding the Z-score</p>
-                                <p class="fw-bold">Z-score: <span id="z-score" class="text-danger"></span></p>
-                                <div class="mb-3">
-                                    <label for="score" class="form-label">Score <span class="fw-bold">(X)</span></label>
-                                    <input type="text" class="form-control" id="score">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mean" class="form-label">Mean <span class="fw-bold">(&#x03BC; or X&#772;)</span></label>
-                                    <input type="text" class="form-control" id="mean">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="sd" class="form-label">standard_deviation <span class="fw-bold">(&sigma;)</span></label>
-                                    <input type="text" class="form-control" id="sd">
-                                </div>
-                                <button type="submit" class="btn btn-primary mb-3" onclick="getZScore()">Calculate Z-Score</button>
-                            </div>
-
-                            <div class="col">
-                                hehe
-                            </div>
-                        </div>
+                    <p class="fw-bold">Finding the Z-score</p>
+                    <p class="fw-bold">Z-score: <span id="z-score" class="text-danger"></span></p>
+                    <div class="mb-3">
+                        <label for="score" class="form-label">Score <span class="fw-bold">(X)</span></label>
+                        <input type="text" class="form-control" id="score">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mean" class="form-label">Mean <span class="fw-bold">(&#x03BC; or
+                                X&#772;)</span></label>
+                        <input type="text" class="form-control" id="mean">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sd" class="form-label">standard_deviation <span
+                                class="fw-bold">(&sigma;)</span></label>
+                        <input type="text" class="form-control" id="sd">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary mb-3" onclick="getZScore()">Calculate
+                            Z-Score</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
