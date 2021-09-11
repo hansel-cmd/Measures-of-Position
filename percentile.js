@@ -17,6 +17,10 @@ function calculate() {
     getPercentile();
 }
 
+function calculateRight() {
+
+}
+
 function reset() {
 
     data = [];
@@ -40,7 +44,8 @@ function parseData() {
         return retval;
     }, []);
 
-    data.sort();
+    data.sort((a, b) => a - b);
+    console.log(data)
 }
 
 function getPercentile() {
@@ -53,10 +58,7 @@ function getPercentile() {
 
     percentile = (number_of_values_below_x + 0.5) / data.length * 100;
 
-    percentile_position.innerHTML = `P<sub>${percentile}</sub> = ${raw_score}`;
-
-
-
+    percentile_position.innerHTML = `<strong>${percentile}th</strong> percentile. P<sub>${percentile}</sub> = ${raw_score}`;
 
 }
 
