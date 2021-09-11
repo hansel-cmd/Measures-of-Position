@@ -26,20 +26,20 @@
     <section class="pt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <p class="text-center">Finding the Percentile Rank given a score and the data set</p>
+                <div class="col-md-6 border-bottom mb-4 pb-4">
+                    <p class="text-center text-primary">Finding the Percentile Rank given a score and the data set</p>
                     <div class="form-floating">
                         <textarea id="text-area" class="form-control" style="height: 200px"></textarea>
                         <label for="text-area">Given Data</label>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="my-3">
                         <label for="score" class="form-label">Given Score <span class="fw-bold">(X)</span></label>
                         <input type="text" class="form-control" id="score">
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary mb-3" onclick="calculate()">Get Positions</button>
+                        <button type="submit" class="btn btn-primary mb-3" onclick="calculate()">Get Percentile</button>
                     </div>
 
                     <p class="fs-4">Percentile: <span id="percentile_position" class="text-danger"></span></p>
@@ -51,20 +51,20 @@
                 </div>
 
 
-                <div class="col-md-6">
-                    <p class="text-center">Finding a data value corresponding to a given percentile</p>
+                <div class="col-md-6 border-bottom mt-4 mt-md-0">
+                    <p class="text-center text-primary">Finding a data value corresponding to a given percentile</p>
                     <div class="form-floating">
                         <textarea id="text-area-right" class="form-control" style="height: 200px"></textarea>
                         <label for="text-area-right">Given Data</label>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="my-3">
                         <label for="score" class="form-label">Given Percentile <span class="fw-bold">(X)</span></label>
                         <input type="text" class="form-control" id="percentile_right">
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary mb-3" onclick="calculateRight()">Get Positions</button>
+                        <button type="submit" class="btn btn-primary mb-3" onclick="calculateRight()">Get Score</button>
                     </div>
 
                     <p class="fs-4">C: <span id="c_text" class="text-danger"></span></p>
