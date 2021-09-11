@@ -45,7 +45,6 @@ function parseData() {
     }, []);
 
     data.sort((a, b) => a - b);
-    console.log(data)
 }
 
 function getPercentile() {

@@ -54,9 +54,12 @@ function getRawScore() {
         c_text.innerHTML = `the value <strong>${data_right[pos]}</strong> is the ${p}th percentile. `;
     } else {
 
+        let value = (data_right[c - 1] + data_right[c]) / 2;
+
+        c_text.innerHTML = `the value <strong>${value}</strong> is the ${p}th percentile.`;
+        
     }
     
-
 }
 
 // 2 3 5 6 8 10 12 15 18 20
