@@ -30,24 +30,24 @@
 
                 <!-- Quartile and IQR -->
                 <div class="row border-bottom mb-4">
-                    <div class="col">
+                    <div class="col-md-4">
                         <p class="fs-4 fw-bold">Quartile</p>
                         <p>Divides the data set into 4 equal parts, separated Q<sub>1</sub>, Q<sub>2</sub>, Q<sub>3</sub>.</p>
                         <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
                             (4 and 5) and get the average of both values in that position.</p>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-12">
                                 <p class="fs-4">Q<sub>1</sub>: <span id="q1" class="text-danger"></span></p>
                                 <p>Formula: <span class="fw-bold">Q<sub>1</sub> = (n + 1) / 4</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
                             </div>
-                            <div class="col">
+                            <div class="col-12">
                                 <p class="fs-4">Q<sub>2</sub>: <span id="q2" class="text-danger"></span></p>
                                 <p>Formula: <span class="fw-bold">Q<sub>2</sub> = (n + 1) / 2</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
                             </div>
-                            <div class="col">
+                            <div class="col-12">
                                 <p class="fs-4">Q<sub>3</sub>: <span id="q3" class="text-danger"></span></p>
                                 <p>Formula: <span class="fw-bold">Q<sub>3</sub> = 3(n + 1) / 4</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
@@ -55,8 +55,15 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-md-4">
                         <p class="fs-4 fw-bold">Interquartile Range: <span id="iqr_text" class="text-danger"></span></p>
+                        <p>Formula: <span class="fw-bold">IQR: Q<sub>3</sub> - Q<sub>1</sub></span></p>
+                        <p>The <strong>Interquartile Range (IQR)</strong> is defined as the difference between Q<sub>3</sub> and Q<sub>1</sub> and is the range of the middle 50% of the data.</p>
+                        <p>The IQR is use to identify <strong><em>Outliers</em></strong>, and it is also used as a measure of variability in exploratory data analysis</p>
+                    </div>
+
+                    <div class="col-md-4">
+
                     </div>
                 </div>
 

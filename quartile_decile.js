@@ -13,11 +13,16 @@ const d7_text = document.querySelector('#d7');
 const d8_text = document.querySelector('#d8');
 const d9_text = document.querySelector('#d9');
 
-let data; // an array of the data set (sorted)
-let q1;
-let q2;
-let q3;
+const iqr_text = document.querySelector('#iqr_text');
 
+let data; // an array of the data set (sorted)
+let q1; // position of Q1
+let q2; // position of Q2
+let q3; // position of Q3
+
+let iqr;
+
+// position of Qk, where k = 1 -> 9
 let d1;
 let d2;
 let d3;
@@ -36,6 +41,8 @@ function calculate() {
     parseData();    
 
     getQuartilePositions();
+
+    getInterQuartileRange();
 
     getDecilePositions();
 
@@ -98,6 +105,29 @@ function getQuartilePositions() {
         Q2: ${q2}
         Q3: ${q3}
     `);
+
+}
+
+function getInterQuartileRange() {
+    
+    let q1_value = data[q1 - 1];
+    if (isDecimal(q1)) {
+        let lower = Math.floor(q1) - 1;
+        let higher = Math.ceil(q1) - 1;
+
+        q1_value = (data[lower] + data[higher]) / 2;
+    }
+
+    let q3_value = data[q3 - 1];
+    if (isDecimal(q3)) {
+        let lower = Math.floor(q3) - 1;
+        let higher = Math.ceil(q3) - 1;
+
+        q3_value = (data[lower] + data[higher]) / 2;
+    }
+
+    iqr = q3_value - q1_value;
+    iqr_text.innerHTML = `IQR is <span class="fw-bold">${iqr}</span>`;
 
 }
 
