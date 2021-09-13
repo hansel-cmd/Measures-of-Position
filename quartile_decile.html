@@ -28,35 +28,35 @@
                     <button type="submit" class="btn btn-primary mb-3" onclick="calculate()">Get Quartile</button>
                 </div>
 
-                <!-- Quartile -->
+                <!-- Quartile and IQR -->
                 <div class="row border-bottom mb-4">
                     <div class="col">
                         <p class="fs-4 fw-bold">Quartile</p>
-                        <p>Divides the data set into 4 equal parts, separated Q1, Q2, Q3.</p>
+                        <p>Divides the data set into 4 equal parts, separated Q<sub>1</sub>, Q<sub>2</sub>, Q<sub>3</sub>.</p>
                         <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
                             (4 and 5) and get the average of both values in that position.</p>
 
                         <div class="row">
                             <div class="col">
-                                <p class="fs-4">Q1: <span id="q1" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>1</sub> = (n + 1) / 4</p>
+                                <p class="fs-4">Q<sub>1</sub>: <span id="q1" class="text-danger"></span></p>
+                                <p>Formula: <span class="fw-bold">Q<sub>1</sub> = (n + 1) / 4</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
                             </div>
                             <div class="col">
-                                <p class="fs-4">Q2: <span id="q2" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>2</sub> = (n + 1) / 2</p>
+                                <p class="fs-4">Q<sub>2</sub>: <span id="q2" class="text-danger"></span></p>
+                                <p>Formula: <span class="fw-bold">Q<sub>2</sub> = (n + 1) / 2</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
                             </div>
                             <div class="col">
-                                <p class="fs-4">Q3: <span id="q3" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>3</sub> = 3(n + 1) / 4</p>
+                                <p class="fs-4">Q<sub>3</sub>: <span id="q3" class="text-danger"></span></p>
+                                <p>Formula: <span class="fw-bold">Q<sub>3</sub> = 3(n + 1) / 4</span></p>
                                 <p>Where <strong><em>n</em></strong> is the number of data values</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <p class="fs-4 fw-bold">Interquartile Range: <span id="" class="text-danger"></span></p>
+                        <p class="fs-4 fw-bold">Interquartile Range: <span id="iqr_text" class="text-danger"></span></p>
                     </div>
                 </div>
 
@@ -64,26 +64,43 @@
                 <div class="row">
                     <div class="col">
                         <p class="fs-4 fw-bold">Decile</p>
-                        <p>Divides the data set into 4 equal parts, separated Q1, Q2, Q3.</p>
+                        <p>Divides the data set into 10 equal parts, separated D<sub>1</sub> to D<sub>9</sub>.</p>
                         <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
                             (4 and 5) and get the average of both values in that position.</p>
 
+                        <p>Formula: <span class="fw-bold">D<sub>k</sub> = k(n + 1) / 10</span></p>
+                        <p class="mb-0">Where <strong><em>k</em></strong> is {1, 2, 3, 4, 5, 6, 7, 8, 9}</p>
+                        <p>Where <strong><em>n</em></strong> is the total number of data</p>
+                        <p></p>
                         <div class="row">
-                            <div class="col">
-                                <p class="fs-4">Q1: <span id="q1" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>1</sub> = (n + 1) / 4</p>
-                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>1</sub>: <span id="d1" class="text-danger"></span></p>
                             </div>
-                            <div class="col">
-                                <p class="fs-4">Q2: <span id="q2" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>2</sub> = (n + 1) / 2</p>
-                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>2</sub>: <span id="d2" class="text-danger"></span></p>
                             </div>
-                            <div class="col">
-                                <p class="fs-4">Q3: <span id="q3" class="text-danger"></span></p>
-                                <p>Formula: Q<sub>3</sub> = 3(n + 1) / 4</p>
-                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>3</sub>: <span id="d3" class="text-danger"></span></p>
                             </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>4</sub>: <span id="d4" class="text-danger"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>5</sub>: <span id="d5" class="text-danger"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>6</sub>: <span id="d6" class="text-danger"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>7</sub>: <span id="d7" class="text-danger"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>8</sub>: <span id="d8" class="text-danger"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fs-4">D<sub>9</sub>: <span id="d9" class="text-danger"></span></p>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
