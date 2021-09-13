@@ -1,6 +1,7 @@
 const text_area_right = document.querySelector('#text-area-right');
 const percentile_right = document.querySelector('#percentile_right');
 const c_text = document.querySelector('#c_text');
+const position = document.querySelector('#position');
 
 let data_right; // array of data provided (right side)
 let p; // position provided (right side)
@@ -52,6 +53,7 @@ function getRawScore() {
         let pos = Math.ceil(c) - 1;
         
         c_text.innerHTML = `the value <strong>${data_right[pos]}</strong> is the ${p}th percentile. `;
+
     } else {
 
         let value = (data_right[c - 1] + data_right[c]) / 2;
@@ -59,6 +61,8 @@ function getRawScore() {
         c_text.innerHTML = `the value <strong>${value}</strong> is the ${p}th percentile.`;
         
     }
+
+    position.innerHTML = `<strong>${c}</strong>`;
     
 }
 

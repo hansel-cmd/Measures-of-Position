@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="quartile_decile.js" defer></script>
+    <title>Measures of Position | CESA</title>
+</head>
+
+<body>
+
+    <section class="pt-4">
+        <div class="container">
+            <h1 class="fs-2 text-center">
+                Measures of Position (Quartile and Decile)
+            </h1>
+            <div class="pb-4 border-bottom">
+                <div class="form-floating my-3">
+                    <textarea id="text-area" class="form-control" style="height: 200px"></textarea>
+                    <label for="text-area">Given Data</label>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary mb-3" onclick="calculate()">Get Quartile</button>
+                </div>
+
+                <!-- Quartile -->
+                <div class="row border-bottom mb-4">
+                    <div class="col">
+                        <p class="fs-4 fw-bold">Quartile</p>
+                        <p>Divides the data set into 4 equal parts, separated Q1, Q2, Q3.</p>
+                        <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
+                            (4 and 5) and get the average of both values in that position.</p>
+
+                        <div class="row">
+                            <div class="col">
+                                <p class="fs-4">Q1: <span id="q1" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>1</sub> = (n + 1) / 4</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                            <div class="col">
+                                <p class="fs-4">Q2: <span id="q2" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>2</sub> = (n + 1) / 2</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                            <div class="col">
+                                <p class="fs-4">Q3: <span id="q3" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>3</sub> = 3(n + 1) / 4</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <p class="fs-4 fw-bold">Interquartile Range: <span id="" class="text-danger"></span></p>
+                    </div>
+                </div>
+
+                <!-- Decile -->
+                <div class="row">
+                    <div class="col">
+                        <p class="fs-4 fw-bold">Decile</p>
+                        <p>Divides the data set into 4 equal parts, separated Q1, Q2, Q3.</p>
+                        <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
+                            (4 and 5) and get the average of both values in that position.</p>
+
+                        <div class="row">
+                            <div class="col">
+                                <p class="fs-4">Q1: <span id="q1" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>1</sub> = (n + 1) / 4</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                            <div class="col">
+                                <p class="fs-4">Q2: <span id="q2" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>2</sub> = (n + 1) / 2</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                            <div class="col">
+                                <p class="fs-4">Q3: <span id="q3" class="text-danger"></span></p>
+                                <p>Formula: Q<sub>3</sub> = 3(n + 1) / 4</p>
+                                <p>Where <strong><em>n</em></strong> is the number of data values</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
