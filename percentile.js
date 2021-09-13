@@ -55,10 +55,20 @@ function getPercentile() {
             number_of_values_below_x++;
     }
 
-    percentile = (number_of_values_below_x + 0.5) / data.length * 100;
+
+    let freq = data.reduce((retval, cur_data) => {
+        if (cur_data == raw_score)
+            return retval + 1;
+        else
+            return retval;
+    }, 0);
+
+    percentile = (number_of_values_below_x + 0.5 * freq) / data.length * 100;
 
     percentile_position.innerHTML = `<strong>${percentile}th</strong> percentile. P<sub>${percentile}</sub> = ${raw_score}`;
 
 }
 
 // 18 15 12 6 8 2 3 5 20 10
+// 5 6 8 9 11 12 14 15 16 16 17 19 20 22 23 25
+
