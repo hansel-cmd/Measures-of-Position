@@ -30,7 +30,7 @@
 
                 <!-- Quartile and IQR -->
                 <div class="row border-bottom mb-4">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <p class="fs-4 fw-bold">Quartile</p>
                         <p>Divides the data set into 4 equal parts, separated Q<sub>1</sub>, Q<sub>2</sub>, Q<sub>3</sub>.</p>
                         <p>If the position is decimal, i.e, 4.25, you need to get the floor and the ceil of the position
@@ -55,16 +55,27 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <p class="fs-4 fw-bold">Interquartile Range: <span id="iqr_text" class="text-danger"></span></p>
                         <p>Formula: <span class="fw-bold">IQR: Q<sub>3</sub> - Q<sub>1</sub></span></p>
                         <p>The <strong>Interquartile Range (IQR)</strong> is defined as the difference between Q<sub>3</sub> and Q<sub>1</sub> and is the range of the middle 50% of the data.</p>
                         <p>The IQR is use to identify <strong><em>Outliers</em></strong>, and it is also used as a measure of variability in exploratory data analysis</p>
+
+                        <p class="fs-4 fw-bold">Outliers <span id="outliers_text" class="text-danger"></span></p>
+
+                        <p>Lower Outlier: <span id="lower_outlier_text" class="text-danger fw-bold"></span></p>
+                        <p>Higher Outlier: <span id="higher_outlier_text" class="text-danger fw-bold"></span></p>
+
+                        <p>How many data points can we say are lower outliers? <span id="how_many_lower_outlier" class="text-danger"></span></p>
+                        <p>How many data points can we say are higher outliers? <span id="how_many_higher_outlier" class="text-danger"></span></p>
+
+                        <p>Lower Outlier Formula: <span class="fw-bold">Q<sub>1</sub> - 1.5(IQR)</span></p>
+                        <p>Higher Outlier Formula: <span class="fw-bold">Q<sub>3</sub> + 1.5(IQR)</span></p>
+
+                        <p>If there are no data below the lower_outlier, then it has no lower outliers</p>
+                        <p>If there are no data above the higher_outlier, then it has no higher outliers</p>
                     </div>
 
-                    <div class="col-md-4">
-
-                    </div>
                 </div>
 
                 <!-- Decile -->

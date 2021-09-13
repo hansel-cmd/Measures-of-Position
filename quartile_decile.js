@@ -14,6 +14,11 @@ const d8_text = document.querySelector('#d8');
 const d9_text = document.querySelector('#d9');
 
 const iqr_text = document.querySelector('#iqr_text');
+const l_outlier_text = document.querySelector('#lower_outlier_text');
+const h_outlier_text = document.querySelector('#higher_outlier_text');
+
+const how_many_lower_outliers = document.querySelector('#how_many_lower_outlier');
+const how_many_higher_outliers = document.querySelector('#how_many_higher_outlier');
 
 let data; // an array of the data set (sorted)
 let q1; // position of Q1
@@ -21,6 +26,8 @@ let q2; // position of Q2
 let q3; // position of Q3
 
 let iqr;
+let lower_outlier;
+let higher_outlier;
 
 // position of Qk, where k = 1 -> 9
 let d1;
@@ -74,6 +81,9 @@ function reset() {
     d7 = 0;
     d8 = 0;
     d9 = 0;
+    iqr = 0;
+    lower_outlier = 0;
+    higher_outlier = 0;
 }
 
 function parseData() {
@@ -129,6 +139,34 @@ function getInterQuartileRange() {
     iqr = q3_value - q1_value;
     iqr_text.innerHTML = `IQR is <span class="fw-bold">${iqr}</span>`;
 
+    checkOutliers(q3_value, q1_value);
+
+}
+
+function checkOutliers(high, low) {
+    lower_outlier = low - 1.5 * iqr;
+    higher_outlier = high + 1.5 * iqr;
+
+    console.log(`
+        lower outlier: ${lower_outlier}
+        higher outlier: ${higher_outlier}
+    `);
+
+    l_outlier_text.innerHTML = lower_outlier;
+    h_outlier_text.innerHTML = higher_outlier;
+
+    let lower_count = 0;
+    let higher_count = 0;
+    for (i = 0; i < data.length; i++) {
+        if (data[i] < lower_outlier)
+            lower_count++;
+        
+        if (data[i] > higher_outlier)
+            higher_count++;
+    }
+
+    how_many_higher_outliers.innerHTML = `there are ${higher_count}`;
+    how_many_lower_outliers.innerHTML = `there are ${lower_count}`;
 }
 
 function getDecilePositions() {
@@ -152,7 +190,6 @@ function getDecilePositions() {
 function isDecimal(x) {
     return x % 1 != 0;
 }
-
 
 function getValue(x) {
     let value = data[x - 1];
